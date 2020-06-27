@@ -1,0 +1,2 @@
+gazebo_ros_demos/gazebo_tutorials:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:joint_state_publisher/joint_state_publisher:joint_state_publisher/joint_state_publisher_gui:sample_hexapod_controller:sample_hexapod_robot:test_joint_pub
+-DCATKIN_DEVEL_PREFIX=/home/jim/project/robotics/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jim/project/robotics/catkin_ws/install -G Unix Makefiles

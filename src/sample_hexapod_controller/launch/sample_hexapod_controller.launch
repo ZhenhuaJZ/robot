@@ -1,0 +1,34 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find sample_hexapod_controller)/config/sample_hexapod_controller.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/sample_hexapod_robot" args="joint_state_controller
+					  RightFrontJoint2_position_controller
+					  RightFrontJoint3_position_controller
+					  RightFrontJoint4_position_controller
+					  LeftFrontJoint2_position_controller
+					  LeftFrontJoint3_position_controller
+					  LeftFrontJoint4_position_controller
+					  MiddleRightJoint2_position_controller
+					  MiddleRightJoint3_position_controller
+					  MiddleRightJoint4_position_controller
+					  MiddleLeftJoint2_position_controller
+					  MiddleLeftJoint3_position_controller
+					  MiddleLeftJoint4_position_controller
+					  BottomRightJoint2_position_controller
+					  BottomRightJoint3_position_controller
+					  BottomRightJoint4_position_controller
+					  BottomLeftJoint2_position_controller
+					  BottomLeftJoint3_position_controller
+					  BottomLeftJoint4_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/sample_hexapod_robot/joint_states" />
+  </node>
+
+</launch>

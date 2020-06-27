@@ -1,0 +1,85 @@
+sample_hexapod_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  # ############ FrontRightTransmissions################
+  RightFrontJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RightFrontJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  RightFrontJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RightFrontJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  RightFrontJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RightFrontJoint4
+    pid:  {p: 1.5, i: 2, d: 0}
+  # ############ LeftFrontTransmissions################
+  LeftFrontJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LeftFrontJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  LeftFrontJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LeftFrontJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  LeftFrontJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LeftFrontJoint4
+    pid:  {p: 1.5, i: 2, d: 0}
+  # ############ MiddleRightTransmissions################
+  MiddleRightJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleRightJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  MiddleRightJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleRightJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  MiddleRightJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleRightJoint4
+    pid:  {p: 1.5, i: 2, d: 0}
+  # ############ MiddleLeftTransmissions################
+  MiddleLeftJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleLeftJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  MiddleLeftJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleLeftJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  MiddleLeftJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MiddleLeftJoint4
+    pid:  {p: 1.5, i: 2, d: 0}
+  # ############ BottomRightTransmissions################
+  BottomRightJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomRightJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  BottomRightJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomRightJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  BottomRightJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomRightJoint4
+    pid:  {p: 1.5, i: 2, d: 0}
+  # ############ BottomLeftTransmissions################
+  BottomLeftJoint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomLeftJoint2
+    pid:  {p: 1.5, i: 2, d: 0}
+  BottomLeftJoint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomLeftJoint3
+    pid:  {p: 1.5, i: 2, d: 0}
+  BottomLeftJoint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: BottomLeftJoint4
+    pid:  {p: 1.5, i: 2, d: 0}

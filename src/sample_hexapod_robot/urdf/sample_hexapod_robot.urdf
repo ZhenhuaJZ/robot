@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="sample_hexapod_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0201724295551156 -0.0157441046135445 -0.00674889408254364"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+      <!-- <mass
+        value="0.0716155283270815" />
+      <inertia
+        ixx="6.13329692510778E-05"
+        ixy="1.59034863834077E-05"
+        ixz="1.20390377320831E-22"
+        iyy="0.00027215207463891"
+        iyz="1.62249266634428E-22"
+        izz="0.00032629128217773" /> -->
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RightFrontLink1">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0.0117444424090268 -0.00583560923500802"
+        rpy="0 0 0" />
+      <mass
+        value="0.00481299409312765" />
+      <inertia
+        ixx="1.18177478674688E-06"
+        ixy="-1.42650712427758E-21"
+        ixz="-2.59695162761179E-24"
+        iyy="2.88509010884338E-06"
+        iyz="3.65304851631169E-07"
+        izz="2.98596434344079E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontJoint1"
+    type="fixed">
+    <origin
+      xyz="0.0797966933644301 -0.0194131059174563 -0.0399893477490188"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RightFrontLink1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RightFrontLink2">
+    <inertial>
+      <origin
+        xyz="0.00452867992289666 0.0139710440348122 -0.00560326484439639"
+        rpy="0 0 0" />
+      <mass
+        value="0.0532163858371582" />
+      <inertia
+        ixx="8.59655539356453E-06"
+        ixy="1.38445250775542E-07"
+        ixz="3.37486665413632E-08"
+        iyy="1.32545838824263E-05"
+        iyz="-1.38471551019802E-07"
+        izz="8.62839306366304E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontJoint2"
+    type="continuous">
+    <origin
+      xyz="0 0.0270001999999999 -0.0186562999999996"
+      rpy="-1.5707963267949 -0.786246680506596 1.5707963267949" />
+    <parent
+      link="RightFrontLink1" />
+    <child
+      link="RightFrontLink2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RightFrontLink3">
+    <inertial>
+      <origin
+        xyz="0.0404128398424304 0.00597660677483936 0.00369375749998602"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="6.14529175645602E-06"
+        ixy="1.23648254560111E-13"
+        ixz="-3.65304851631165E-07"
+        iyy="3.44355530037888E-06"
+        iyz="-1.23648258901154E-13"
+        izz="7.79938480929225E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontJoint3"
+    type="continuous">
+    <origin
+      xyz="0 0.0284480000000001 -0.019127099952002"
+      rpy="3.14159265358979 -0.785398163397442 1.5707963267949" />
+    <parent
+      link="RightFrontLink2" />
+    <child
+      link="RightFrontLink3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="RightFrontLink4">
+    <inertial>
+      <origin
+        xyz="0.017502224050596 0.00213695685860105 4.7020139145551E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.98709519783942E-06"
+        ixy="1.2256306723942E-07"
+        ixz="1.68744277076862E-08"
+        iyy="7.43377213845983E-06"
+        iyz="-1.38372953220074E-07"
+        izz="5.85869865539314E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/RightFrontLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontJoint4"
+    type="continuous">
+    <origin
+      xyz="0.0730630999999997 0 0.0186563000000001"
+      rpy="1.5707963267949 -0.785398163397455 3.14159265358979" />
+    <parent
+      link="RightFrontLink3" />
+    <child
+      link="RightFrontLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="LeftFrontLink1">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.0117444424090268 -0.00583560923500803"
+        rpy="0 0 0" />
+      <mass
+        value="0.00481299409312765" />
+      <inertia
+        ixx="1.18177478674687E-06"
+        ixy="3.83641268413852E-22"
+        ixz="7.43348252236493E-22"
+        iyy="2.88509010884338E-06"
+        iyz="3.65304851631169E-07"
+        izz="2.98596434344079E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontJoint1"
+    type="fixed">
+    <origin
+      xyz="0.0797966933644301 0.0329108940825437 -0.0399893477490188"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LeftFrontLink1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LeftFrontLInk2">
+    <inertial>
+      <origin
+        xyz="0.0042927116829299 -0.0142494000000003 -0.00590628826906783"
+        rpy="0 0 0" />
+      <mass
+        value="0.0522696869799878" />
+      <inertia
+        ixx="8.56368160000811E-06"
+        ixy="-1.38274058125036E-07"
+        ixz="3.5847434372441E-08"
+        iyy="1.32217101778383E-05"
+        iyz="1.38274058125032E-07"
+        izz="8.56368160000811E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLInk2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLInk2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontJoint2"
+    type="continuous">
+    <origin
+      xyz="0 0.0269911968874116 -0.0186293668612354"
+      rpy="1.5707963267949 -0.786246680508058 1.5707963267949" />
+    <parent
+      link="LeftFrontLink1" />
+    <child
+      link="LeftFrontLInk2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="LeftFrontLink3">
+    <inertial>
+      <origin
+        xyz="-0.00369426510069479 0.00543050677483787 -0.0404133474431356"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="7.79943723513966E-06"
+        ixy="2.47296509967254E-13"
+        ixz="-3.65304851631169E-07"
+        iyy="3.44355530037888E-06"
+        iyz="-1.6940658945086E-21"
+        izz="6.14523933060859E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontJoint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.0284734 -0.0185936999519958"
+      rpy="3.14159265358979 -0.785398163397443 1.5707963267949" />
+    <parent
+      link="LeftFrontLInk2" />
+    <child
+      link="LeftFrontLink3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="LeftFrontLink4">
+    <inertial>
+      <origin
+        xyz="0.0173312004836655 -0.00213695685902054 -0.00049907986087272"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.9870951978397E-06"
+        ixy="-1.22365823567027E-07"
+        ixz="1.79235818286107E-08"
+        iyy="7.4337721384596E-06"
+        iyz="1.38372942876725E-07"
+        izz="5.85869865539311E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/LeftFrontLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontJoint4"
+    type="continuous">
+    <origin
+      xyz="-0.0186563000000022 0 -0.073063099999997"
+      rpy="1.5707963267959 -0.785398163398452 3.14159265358838" />
+    <parent
+      link="LeftFrontLink3" />
+    <child
+      link="LeftFrontLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="MiddleRightLink1">
+    <inertial>
+      <origin
+        xyz="-0.00338972796446857 0.0229454122748954 9.48742289353863E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00662740565244451" />
+      <inertia
+        ixx="2.19706904997707E-06"
+        ixy="2.1649945772828E-21"
+        ixz="1.23648259153443E-13"
+        iyy="3.22730168561668E-06"
+        iyz="4.67113118283495E-22"
+        izz="4.78057292970292E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleRightJoint1"
+    type="fixed">
+    <origin
+      xyz="-0.0045313 -0.019413 -0.039989"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="MiddleRightLink1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="MiddleRightLink2">
+    <inertial>
+      <origin
+        xyz="0.00600434318283062 -0.0142239999999997 -0.00612161228746982"
+        rpy="0 0 0" />
+      <mass
+        value="0.0522696869799877" />
+      <inertia
+        ixx="8.5636816000081E-06"
+        ixy="1.384714636615E-07"
+        ixz="1.04942766887823E-09"
+        iyy="1.32217101778383E-05"
+        iyz="1.38471463661503E-07"
+        izz="8.5636816000081E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleRightJoint2"
+    type="continuous">
+    <origin
+      xyz="0 0.046063 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="MiddleRightLink1" />
+    <child
+      link="MiddleRightLink2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="MiddleRightLink3">
+    <inertial>
+      <origin
+        xyz="0.00369060677483836 -0.0404128398424318 0.00369375749998502"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="3.44355530037886E-06"
+        ixy="-1.23648257198683E-13"
+        ixz="-1.2364825584536E-13"
+        iyy="6.145291756456E-06"
+        iyz="3.65304851631167E-07"
+        izz="7.79938480929222E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleRightJoint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.028448 -0.019114"
+      rpy="-2.3562 0 -3.1416" />
+    <parent
+      link="MiddleRightLink2" />
+    <child
+      link="MiddleRightLink3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="MiddleRightLink4">
+    <inertial>
+      <origin
+        xyz="0.0175022240505962 0.00213695685903806 -0.0022389798194285"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.98709519783942E-06"
+        ixy="1.22563067417214E-07"
+        ixz="1.68744248766835E-08"
+        iyy="7.43377213845984E-06"
+        iyz="-1.38372953220075E-07"
+        izz="5.85869865539314E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleRightLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleRightJoint4"
+    type="continuous">
+    <origin
+      xyz="0 -0.073063 0.018656"
+      rpy="1.5708 -0.7854 1.5708" />
+    <parent
+      link="MiddleRightLink3" />
+    <child
+      link="MiddleRightLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="MiddleLeftLink1">
+    <inertial>
+      <origin
+        xyz="-0.00338972796446862 0.0229454122748954 -9.48742289343454E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0066274056524445" />
+      <inertia
+        ixx="2.19706904997706E-06"
+        ixy="7.3352551952893E-22"
+        ixz="-1.23648257245624E-13"
+        iyy="3.22730168561668E-06"
+        iyz="-1.38649015147347E-21"
+        izz="4.78057292970291E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleLeftJoint1"
+    type="fixed">
+    <origin
+      xyz="-0.0045313 0.032911 -0.039989"
+      rpy="0 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="MiddleLeftLink1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="MiddleLeftLink2">
+    <inertial>
+      <origin
+        xyz="0.00630971916442873 0.0142240000000001 -0.00589358826906994"
+        rpy="0 0 0" />
+      <mass
+        value="0.0522696869799877" />
+      <inertia
+        ixx="8.5636816000081E-06"
+        ixy="-1.38274058125033E-07"
+        ixz="-1.0494276688793E-09"
+        iyy="1.32217101778383E-05"
+        iyz="-1.38274058125026E-07"
+        izz="8.5636816000081E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="0 0.046063 0"
+      rpy="3.1416 -1.5708 3.14" />
+    <parent
+      link="MiddleLeftLink1" />
+    <child
+      link="MiddleLeftLink2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="MiddleLeftLink3">
+    <inertial>
+      <origin
+        xyz="0.00315720677483883 -0.0404138550438462 -0.00369375749998499"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="3.44355530037888E-06"
+        ixy="1.2364826165101E-13"
+        ixz="1.23648262871156E-13"
+        iyy="6.14529175645598E-06"
+        iyz="-3.65304851631168E-07"
+        izz="7.79938480929223E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleLeftJoint3"
+    type="continuous">
+    <origin
+      xyz="0 0.028448 -0.018581"
+      rpy="-0.7854 0 -3.1416" />
+    <parent
+      link="MiddleLeftLink2" />
+    <child
+      link="MiddleLeftLink3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="MiddleLeftLink4">
+    <inertial>
+      <origin
+        xyz="0.0173312004836624 -0.002136956859038 -0.00277237986085704"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.98709519783942E-06"
+        ixy="-1.22365823563716E-07"
+        ixz="1.79235818268787E-08"
+        iyy="7.43377213845985E-06"
+        iyz="1.38372942876585E-07"
+        izz="5.85869865539315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/MiddleLeftLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MiddleLeftJoint4"
+    type="continuous">
+    <origin
+      xyz="0 -0.073063 -0.018656"
+      rpy="1.5708 0.7854 1.5708" />
+    <parent
+      link="MiddleLeftLink3" />
+    <child
+      link="MiddleLeftLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BottomRightLink1">
+    <inertial>
+      <origin
+        xyz="-0.00544490603885191 -0.0151146056014377 0.00266986656589765"
+        rpy="0 0 0" />
+      <mass
+        value="0.00840681165634204" />
+      <inertia
+        ixx="3.14658069674164E-06"
+        ixy="-3.65304846028535E-07"
+        ixz="3.10536586089031E-10"
+        iyy="3.15571586439312E-06"
+        iyz="-6.39792134758118E-11"
+        izz="1.37420266058929E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomRightJoint1"
+    type="fixed">
+    <origin
+      xyz="-0.088859 -0.019413 -0.039989"
+      rpy="0 0.00017514 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BottomRightLink1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="BottomRightLink2">
+    <inertial>
+      <origin
+        xyz="0.00600434318283 -0.014224 -0.00613431228747037"
+        rpy="0 0 0" />
+      <mass
+        value="0.0522696869799878" />
+      <inertia
+        ixx="8.56368160000811E-06"
+        ixy="1.38471463661502E-07"
+        ixz="1.04942766887751E-09"
+        iyy="1.32217101778383E-05"
+        iyz="1.38471463661504E-07"
+        izz="8.5636816000081E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomRightJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.018656 -0.03335 0"
+      rpy="0.00012374 -0.00012395 -0.78455" />
+    <parent
+      link="BottomRightLink1" />
+    <child
+      link="BottomRightLink2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BottomRightLink3">
+    <inertial>
+      <origin
+        xyz="-0.0404138550438458 0.00369060677483947 -0.00369375749998468"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="6.14529175645597E-06"
+        ixy="1.23648256148297E-13"
+        ixz="-3.6530485163117E-07"
+        iyy="3.44355530037887E-06"
+        iyz="1.23648254560111E-13"
+        izz="7.79938480929219E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomRightJoint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.028448 -0.019127099952"
+      rpy="0 0.785398163397454 1.5707963267949" />
+    <parent
+      link="BottomRightLink2" />
+    <child
+      link="BottomRightLink3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="BottomRightLink4">
+    <inertial>
+      <origin
+        xyz="0.017502222237589 0.00213695685903822 -0.00223898052686797"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.98709519783942E-06"
+        ixy="1.22563229100187E-07"
+        ixz="1.68744248766831E-08"
+        iyy="7.43377213845984E-06"
+        iyz="-1.38372578909951E-07"
+        izz="5.85869865539314E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomRightLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomRightJoint4"
+    type="continuous">
+    <origin
+      xyz="-0.0730630999999976 0 -0.0186562999999977"
+      rpy="-1.5707963267949 0.785398163397442 0" />
+    <parent
+      link="BottomRightLink3" />
+    <child
+      link="BottomRightLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BottomLeftLink1">
+    <inertial>
+      <origin
+        xyz="-0.0054444383569754 -0.0151146056014377 -0.0026708198202042"
+        rpy="0 0 0" />
+      <mass
+        value="0.00840681165634204" />
+      <inertia
+        ixx="3.14658075115044E-06"
+        ixy="-3.6530485163117E-07"
+        ixz="-1.23648257868793E-13"
+        iyy="3.15571586439312E-06"
+        iyz="1.96266958333954E-21"
+        izz="1.37420260618049E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomLeftJoint1"
+    type="fixed">
+    <origin
+      xyz="-0.088859 0.032911 -0.039989"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BottomLeftLink1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="BottomLeftLink2">
+    <inertial>
+      <origin
+        xyz="0.0213846191644279 0.0191261999999996 -0.00590628826906894"
+        rpy="0 0 0" />
+      <mass
+        value="0.0522696869799878" />
+      <inertia
+        ixx="8.5636816000081E-06"
+        ixy="-1.38274058125027E-07"
+        ixz="-1.04942766887137E-09"
+        iyy="1.32217101778383E-05"
+        iyz="-1.38274058125029E-07"
+        izz="8.56368160000811E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.0258614686662949 -0.0192303657467149 0"
+      rpy="3.14159265358979 0 -0.78454964628684" />
+    <parent
+      link="BottomLeftLink1" />
+    <child
+      link="BottomLeftLink2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BottomLeftLink3">
+    <inertial>
+      <origin
+        xyz="-0.0404138550438461 -0.0119176932251596 0.00369375749998496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123870986027426" />
+      <inertia
+        ixx="6.14529175645598E-06"
+        ixy="1.23648255407144E-13"
+        ixz="3.6530485163117E-07"
+        iyy="3.44355530037886E-06"
+        iyz="-1.23648263665715E-13"
+        izz="7.79938480929221E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomLeftJoint3"
+    type="continuous">
+    <origin
+      xyz="0 0.0333501999999997 -0.0185936999519997"
+      rpy="3.14159265358979 0.785398163397447 -1.5707963267949" />
+    <parent
+      link="BottomLeftLink2" />
+    <child
+      link="BottomLeftLink3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="BottomLeftLink4">
+    <inertial>
+      <origin
+        xyz="0.0173312022966688 -0.00213695685860177 -0.0178472805268687"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328903409487069" />
+      <inertia
+        ixx="3.98709519783939E-06"
+        ixy="-1.22365661702495E-07"
+        ixz="1.79235789961424E-08"
+        iyy="7.43377213845987E-06"
+        iyz="1.38372568566472E-07"
+        izz="5.85869865539314E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sample_hexapod_robot/meshes/BottomLeftLink4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BottomLeftJoint4"
+    type="continuous">
+    <origin
+      xyz="-0.0730630999999995 0 0.0186563000000002"
+      rpy="-1.57079632679503 -0.785398163397583 0" />
+    <parent
+      link="BottomLeftLink3" />
+    <child
+      link="BottomLeftLink4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <!-- FrontRightTransmissions -->
+  <transmission name="RightFrontTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RightFrontJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RightFrontMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="RightFrontTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RightFrontJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RightFrontMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="RightFrontTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RightFrontJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RightFrontMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <!-- LeftFrontTransmittion -->
+  <transmission name="LeftFrontTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LeftFrontJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="LeftFrontMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="LeftFrontTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LeftFrontJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="LeftFrontMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="LeftFrontTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LeftFrontJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="LeftFrontMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- MiddleRightTransmittion -->
+  <transmission name="MiddleRightTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleRightJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleRightMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MiddleRightTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleRightJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleRightMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MiddleRightTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleRightJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleRightMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- MiddleLeftTransmittion -->
+  <transmission name="MiddleLeftTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleLeftJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleLeftMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MiddleLeftTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleLeftJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleLeftMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MiddleLeftTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MiddleLeftJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MiddleLeftMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- BottomRightTransmittion -->
+  <transmission name="BottomRightTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomRightJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomRightMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="BottomRightTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomRightJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomRightMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="BottomRightTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomRightJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomRightMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- BottomLeftTransmittion -->
+  <transmission name="BottomLeftTran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomLeftJoint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomLeftMotor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="BottomLeftTran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomLeftJoint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomLeftMotor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="BottomLeftTran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BottomLeftJoint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BottomLeftMotor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- Gazebo plugin decleration -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/sample_hexapod_robot</robotNamespace>
+    </plugin>
+  </gazebo>
+
+</robot>
