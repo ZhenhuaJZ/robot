@@ -1,8 +1,0 @@
-prefix=/home/jim/project/robotics/catkin_ws/devel
-
-Name: urdf_sim_tutorial
-Description: Description of urdf_sim_tutorial
-Version: 0.5.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

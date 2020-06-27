@@ -1,8 +1,0 @@
-prefix=/home/jim/project/robotics/catkin_ws/install
-
-Name: sample_hexapod_robot
-Description: Description of sample_hexapod_robot
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

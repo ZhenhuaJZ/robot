@@ -1,7 +1,0 @@
-set(test_joint_pub_SETUP_PY_SETUP_MODULE "setuptools")
-set(test_joint_pub_SETUP_PY_VERSION "0.0.0")
-set(test_joint_pub_SETUP_PY_SCRIPTS "")
-set(test_joint_pub_SETUP_PY_PACKAGES "test_joint_pub")
-set(test_joint_pub_SETUP_PY_PACKAGE_DIRS "src/test_joint_pub")
-set(test_joint_pub_SETUP_PY_MODULES "")
-set(test_joint_pub_SETUP_PY_MODULE_DIRS "")
