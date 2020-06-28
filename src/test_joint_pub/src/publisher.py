@@ -132,8 +132,6 @@ class JointController:
 
 
 def frontRightIK(x, y, z):
-    # x_offset =
-    # y_offset =
     l1 = 1.13 * 0.0254
     l2 = 2.97 * 0.0254
     l3 = 3.65 * 0.0254
@@ -145,10 +143,9 @@ def frontRightIK(x, y, z):
     print("distance d: ", d)
     print("(2 * l2 * l3)", (2 * l2 * l3))
     # print(d)
-    q1 = np.arctan(x/y) - np.pi / 4
-    q3 = -np.pi + np.arccos((l2**2 + l3**2 - d**2) / (2 * l2 * l3)) + (offsets_q2 + np.pi / 2)
-    # print((l2**2 + l3**2 - d**2), (2 * l2 * l3))
-    q2 = -np.arctan(z/y) + np.arccos((d**2 + l2**2 - l3**2) / (2 * d * l2)) - offsets_q2
+    q1 = np.arctan2(y, x) - np.pi / 4
+    q3 = -(np.pi - np.arccos((l2**2 + l3**2 - d**2) / (2 * l2 * l3))) + (np.pi / 2) + offsets_q2
+    q2 = -(np.arctan2(np.sqrt(x**2 + y**2), z) - np.arccos((d**2 + l2**2 - l3**2) / (2 * d * l2))) + offsets_q2
     return q1, q2, q3
 
 
@@ -162,20 +159,21 @@ def pub():
     rate.sleep()
     i = 0
     joint_loop = np.arange(-0.15, 0.15, 0.001)
-    # joint_loop = np.arange(-2.2, 2.2, 0.05)
+    # joint_loop = np.arange(-1.45, 1.45, 0.01)
     while not rospy.is_shutdown():
-        # for x in joint_loop:
-        #     q1, q2, q3 = frontRightIK(x, 0.05, 0.01)
-        #     print("joint_output: ", q1, q2, q3)
-        #     print("coordinates: ", x, 0.1, 0.1)
-        #     controller.control_front_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
-        #     controller.control_front_left_joint(joint1=q1, joint2=q2, joint3=q3)
-        #     controller.control_middle_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
-        #     controller.control_middle_left_joint(joint1=0.01, joint2=0.01, joint3=0.01)
-        #     controller.control_bottom_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
-        #     controller.control_bottom_left_joint(joint1=0.01, joint2=0.01, joint3=0.01)
-        #     rate.sleep()
-        #
+        for x in joint_loop:
+            q1, q2, q3 = frontRightIK(x, 0.02, 0.01)
+            print("joint_output: ", q1, q2, q3)
+            print("coordinates: ", x, 0.05, 0.1)
+            controller.control_front_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
+            controller.control_front_left_joint(joint1=q1, joint2=-q2, joint3=-q3)
+            # controller.control_front_left_joint(joint1=0, joint2=-x, joint3=0)
+            controller.control_middle_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
+            controller.control_middle_left_joint(joint1=0.01, joint2=0.01, joint3=0.01)
+            controller.control_bottom_right_joint(joint1=0.01, joint2=0.01, joint3=0.01)
+            controller.control_bottom_left_joint(joint1=0.01, joint2=0.01, joint3=0.01)
+            rate.sleep()
+
         # for x in joint_loop:
         #     q1, q2, q3 = frontRightIK(-x, (1.13*0.0254) / 4, 0.05)
         #     print("joint_output: ", q1, q2, q3)
@@ -197,19 +195,19 @@ def pub():
         #     print(q1, q2, q3)
         #     exit()
         # exit()
-        joint_rad = np.pi*np.sin(i)
-        while joint_rad < np.pi / 4:
-            joint_rad = np.pi*np.sin(i)
-            print(joint_rad)
-            controller(joint_rad)
-            i += 0.005
-            rate.sleep()
-        while joint_rad > -np.pi / 4:
-            joint_rad = np.pi*np.sin(i)
-            controller(joint_rad)
-            i -= 0.005
-            rate.sleep()
-        i += 1
+        # joint_rad = np.pi*np.sin(i)
+        # while joint_rad < np.pi / 4:
+        #     joint_rad = np.pi*np.sin(i)
+        #     print(joint_rad)
+        #     controller(joint_rad)
+        #     i += 0.005
+        #     rate.sleep()
+        # while joint_rad > -np.pi / 4:
+        #     joint_rad = np.pi*np.sin(i)
+        #     controller(joint_rad)
+        #     i -= 0.005
+        #     rate.sleep()
+        # i += 1
         # print(i)
         # print(joint_rad)
         # rospy.loginfo(joint_rad)
