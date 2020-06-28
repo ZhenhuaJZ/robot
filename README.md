@@ -13,7 +13,8 @@ Clone the repository into the desired directionary and build the directory with 
 ```bash
 cd robot
 # Initialize ros if its not already in .bashrc
-source /opt/ros/melodic/setup.bash
+source /opt/ros/melodic/setup.bash (ububtu 18)
+source /opt/ros/kinetic/setup.bash (ububtu 16)
 catkin_make
 ```
 
