@@ -1,0 +1,30 @@
+controller_list:
+  - name: fake_FrontRight_controller
+    joints:
+      - FrontRightJoint1
+      - FrontRightJoint2
+      - FrontRightJoint3
+  - name: fake_FrontLeft_controller
+    joints:
+      - FrontLeftJoint1
+      - FrontLeftJoint2
+      - FrontLeftJoint3
+  - name: fake_BackRight_controller
+    joints:
+      - BackRightJoint1
+      - BackRightJoint2
+      - BackRightJoint3
+  - name: fake_BackLeft_controller
+    joints:
+      - BackLeftJoint1
+      - BackLeftJoint2
+      - BackLeftJoint3
+initial:  # Define initial robot poses.
+  - group: FrontRight
+    pose: FrontRightHome
+  - group: FrontLeft
+    pose: FrontLeftHome
+  - group: BackRight
+    pose: BackRIghtHome
+  - group: BackLeft
+    pose: BackLeftHome

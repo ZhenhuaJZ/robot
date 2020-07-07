@@ -1,0 +1,1 @@
+controller_joint_names: ['BackLeftJoint1', 'FrontRightJoint1', 'FrontRightJoint2', 'FrontRightJoint3', 'FrontLeftJoint1', 'FrontLeftJoint2', 'FrontLeftJoint3', 'BackRightJoint1', 'BackRightJoint2', 'BackRightJoint3', 'BackLeftJoint1', 'BackLeftJoint2', 'BackLeftJoint3', ]

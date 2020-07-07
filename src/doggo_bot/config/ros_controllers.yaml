@@ -1,0 +1,140 @@
+# Simulation settings for using moveit_sim_controllers
+moveit_sim_hw_interface:
+  joint_model_group: FrontRight
+  joint_model_group_pose: FrontRightHome
+# Settings for ros_control_boilerplate control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - VirtualJoint
+    - BackLeftJoint1
+    - BackLeftJoint2
+    - BackLeftJoint3
+    - BackRightJoint1
+    - BackRightJoint2
+    - BackRightJoint3
+    - FrontLeftJoint1
+    - FrontLeftJoint2
+    - FrontLeftJoint3
+    - FrontRightJoint1
+    - FrontRightJoint2
+    - FrontRightJoint3
+  sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+# Ros controllers
+FrontRight_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - FrontRightJoint1
+    - FrontRightJoint2
+    - FrontRightJoint3
+  gains:
+    FrontRightJoint1:
+      p: 1000
+      i: 2
+      d: 500
+    FrontRightJoint2:
+      p: 1000
+      i: 2
+      d: 500
+    FrontRightJoint3:
+      p: 1000
+      i: 2
+      d: 500
+FrontLeft_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - FrontLeftJoint1
+    - FrontLeftJoint2
+    - FrontLeftJoint3
+  gains:
+    FrontLeftJoint1:
+      p: 1000
+      i: 2
+      d: 500
+    FrontLeftJoint2:
+      p: 1000
+      i: 2
+      d: 500
+    FrontLeftJoint3:
+      p: 1000
+      i: 2
+      d: 500
+BackRight_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - BackRightJoint1
+    - BackRightJoint2
+    - BackRightJoint3
+  gains:
+    BackRightJoint1:
+      p: 1000
+      i: 2
+      d: 500
+    BackRightJoint2:
+      p: 1000
+      i: 2
+      d: 500
+    BackRightJoint3:
+      p: 1000
+      i: 2
+      d: 500
+BackLeft_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - BackLeftJoint1
+    - BackLeftJoint2
+    - BackLeftJoint3
+  gains:
+    BackLeftJoint1:
+      p: 1000
+      i: 2
+      d: 500
+    BackLeftJoint2:
+      p: 1000
+      i: 2
+      d: 500
+    BackLeftJoint3:
+      p: 1000
+      i: 2
+      d: 500
+controller_list:
+  - name: FrontRight_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - FrontRightJoint1
+      - FrontRightJoint2
+      - FrontRightJoint3
+  - name: FrontLeft_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - FrontLeftJoint1
+      - FrontLeftJoint2
+      - FrontLeftJoint3
+  - name: BackRight_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - BackRightJoint1
+      - BackRightJoint2
+      - BackRightJoint3
+  - name: BackLeft_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - BackLeftJoint1
+      - BackLeftJoint2
+      - BackLeftJoint3

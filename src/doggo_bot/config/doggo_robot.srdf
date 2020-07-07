@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="doggo_robot">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="FrontRight">
+        <joint name="FrontRightJoint1" />
+        <joint name="FrontRightJoint2" />
+        <joint name="FrontRightJoint3" />
+        <joint name="FrontRightJoint4" />
+    </group>
+    <group name="FrontLeft">
+        <joint name="FrontLeftJoint1" />
+        <joint name="FrontLeftJoint2" />
+        <joint name="FrontLeftJoint3" />
+        <joint name="FrontLeftJoint4" />
+    </group>
+    <group name="BackRight">
+        <joint name="BackRightJoint1" />
+        <joint name="BackRightJoint2" />
+        <joint name="BackRightJoint3" />
+        <joint name="BackRightJoint4" />
+    </group>
+    <group name="BackLeft">
+        <joint name="BackLeftJoint1" />
+        <joint name="BackLeftJoint2" />
+        <joint name="BackLeftJoint3" />
+        <joint name="BackLeftJoint4" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="FrontRightHome" group="FrontRight">
+        <joint name="FrontRightJoint1" value="0" />
+        <joint name="FrontRightJoint2" value="0" />
+        <joint name="FrontRightJoint3" value="0" />
+    </group_state>
+    <group_state name="FrontLeftHome" group="FrontLeft">
+        <joint name="FrontLeftJoint1" value="0" />
+        <joint name="FrontLeftJoint2" value="0" />
+        <joint name="FrontLeftJoint3" value="0" />
+    </group_state>
+    <group_state name="BackRIghtHome" group="BackRight">
+        <joint name="BackRightJoint1" value="0" />
+        <joint name="BackRightJoint2" value="0" />
+        <joint name="BackRightJoint3" value="0" />
+    </group_state>
+    <group_state name="BackLeftHome" group="BackLeft">
+        <joint name="BackLeftJoint1" value="0" />
+        <joint name="BackLeftJoint2" value="0" />
+        <joint name="BackLeftJoint3" value="0" />
+    </group_state>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="VirtualJoint" type="floating" parent_frame="world" child_link="base_link" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="BackLeftLink1" link2="BackLeftLink2" reason="Adjacent" />
+    <disable_collisions link1="BackLeftLink1" link2="BackLeftLink3" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="BackLeftLink4" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="BackRightLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontLeftLink2" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontLeftLink3" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontLeftLink4" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontRightLink2" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontRightLink3" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="BackLeftLink1" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="BackLeftLink2" link2="BackLeftLink3" reason="Adjacent" />
+    <disable_collisions link1="BackLeftLink2" link2="BackLeftLink4" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontLeftLink2" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontLeftLink3" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontLeftLink4" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink2" link2="FrontRightLink2" reason="Never" />
+    <disable_collisions link1="BackLeftLink3" link2="BackLeftLink4" reason="Adjacent" />
+    <disable_collisions link1="BackLeftLink3" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink3" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink4" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink4" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackLeftLink4" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="BackRightLink2" reason="Adjacent" />
+    <disable_collisions link1="BackRightLink1" link2="BackRightLink3" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="BackRightLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontLeftLink2" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontLeftLink3" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontLeftLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontRightLink2" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontRightLink3" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink1" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="BackRightLink2" link2="BackRightLink3" reason="Adjacent" />
+    <disable_collisions link1="BackRightLink2" link2="BackRightLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontLeftLink2" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontRightLink2" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontRightLink3" reason="Never" />
+    <disable_collisions link1="BackRightLink2" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="BackRightLink3" link2="BackRightLink4" reason="Adjacent" />
+    <disable_collisions link1="BackRightLink3" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink3" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink4" link2="FrontLeftLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink4" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="BackRightLink4" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="FrontLeftLink1" link2="FrontLeftLink2" reason="Adjacent" />
+    <disable_collisions link1="FrontLeftLink1" link2="FrontLeftLink3" reason="Never" />
+    <disable_collisions link1="FrontLeftLink1" link2="FrontLeftLink4" reason="Never" />
+    <disable_collisions link1="FrontLeftLink1" link2="FrontRightLink1" reason="Never" />
+    <disable_collisions link1="FrontLeftLink1" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="FrontLeftLink2" link2="FrontLeftLink3" reason="Adjacent" />
+    <disable_collisions link1="FrontLeftLink2" link2="FrontLeftLink4" reason="Never" />
+    <disable_collisions link1="FrontLeftLink3" link2="FrontLeftLink4" reason="Adjacent" />
+    <disable_collisions link1="FrontRightLink1" link2="FrontRightLink2" reason="Adjacent" />
+    <disable_collisions link1="FrontRightLink1" link2="FrontRightLink3" reason="Never" />
+    <disable_collisions link1="FrontRightLink1" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="FrontRightLink1" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="FrontRightLink2" link2="FrontRightLink3" reason="Adjacent" />
+    <disable_collisions link1="FrontRightLink2" link2="FrontRightLink4" reason="Never" />
+    <disable_collisions link1="FrontRightLink3" link2="FrontRightLink4" reason="Adjacent" />
+</robot>
