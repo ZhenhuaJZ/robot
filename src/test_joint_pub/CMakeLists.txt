@@ -11,6 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   roscpp
   rospy
+  moveit_commander
+  moveit_msgs
+  geometry_msgs
   std_msgs
 )
 
@@ -162,6 +165,7 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   src/publisher.py
+  src/move_it_command.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

@@ -37,17 +37,17 @@ FrontRight_controller:
     - FrontRightJoint3
   gains:
     FrontRightJoint1:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     FrontRightJoint2:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     FrontRightJoint3:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
 FrontLeft_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
@@ -56,17 +56,17 @@ FrontLeft_controller:
     - FrontLeftJoint3
   gains:
     FrontLeftJoint1:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     FrontLeftJoint2:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     FrontLeftJoint3:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
 BackRight_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
@@ -75,17 +75,17 @@ BackRight_controller:
     - BackRightJoint3
   gains:
     BackRightJoint1:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     BackRightJoint2:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     BackRightJoint3:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
 BackLeft_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
@@ -94,17 +94,17 @@ BackLeft_controller:
     - BackLeftJoint3
   gains:
     BackLeftJoint1:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     BackLeftJoint2:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
     BackLeftJoint3:
-      p: 1000
+      p: 10
       i: 2
-      d: 500
+      d: 2
 controller_list:
   - name: FrontRight_controller
     action_ns: follow_joint_trajectory

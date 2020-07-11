@@ -56,7 +56,7 @@
         <parent link="base_link" />
         <child link="FrontRightLink1" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontRightLink2">
@@ -88,7 +88,7 @@
         <parent link="FrontRightLink1" />
         <child link="FrontRightLink2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontRightLink3">
@@ -120,7 +120,7 @@
         <parent link="FrontRightLink2" />
         <child link="FrontRightLink3" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontRightLink4">
@@ -182,7 +182,7 @@
         <parent link="base_link" />
         <child link="FrontLeftLink1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontLeftLink2">
@@ -214,7 +214,7 @@
         <parent link="FrontLeftLink1" />
         <child link="FrontLeftLink2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontLeftLink3">
@@ -246,7 +246,7 @@
         <parent link="FrontLeftLink2" />
         <child link="FrontLeftLink3" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="FrontLeftLink4">
@@ -308,7 +308,7 @@
         <parent link="base_link" />
         <child link="BackRightLink1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackRightLink2">
@@ -340,7 +340,7 @@
         <parent link="BackRightLink1" />
         <child link="BackRightLink2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackRightLink3">
@@ -372,7 +372,7 @@
         <parent link="BackRightLink2" />
         <child link="BackRightLink3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackRightLink4">
@@ -434,7 +434,7 @@
         <parent link="base_link" />
         <child link="BackLeftLink1" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackLeftLink2">
@@ -466,7 +466,7 @@
         <parent link="BackLeftLink1" />
         <child link="BackLeftLink2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackLeftLink3">
@@ -498,7 +498,7 @@
         <parent link="BackLeftLink2" />
         <child link="BackLeftLink3" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="1" velocity="1" />
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="BackLeftLink4">
