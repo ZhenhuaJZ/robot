@@ -30,6 +30,9 @@
   <!-- <run_depend>warehouse_ros_mongo</run_depend> -->
   <build_depend>doggo_robot</build_depend>
   <run_depend>doggo_robot</run_depend>
+  <!-- Include ikfast packages -->
+  <run_depend>doggo_robot_ikfast_FrontRight_plugin</run_depend>
+  <run_depend>doggo_robot_ikfast_BackLeft_plugin</run_depend>
 
 
 </package>

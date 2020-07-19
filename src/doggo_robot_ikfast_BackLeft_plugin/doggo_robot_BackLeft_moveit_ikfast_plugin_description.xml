@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/libdoggo_robot_BackLeft_moveit_ikfast_plugin">
+  <class base_class_type="kinematics::KinematicsBase" name="doggo_robot_BackLeft/IKFastKinematicsPlugin" type="doggo_robot_BackLeft::IKFastKinematicsPlugin">
+    <description>IKFast61 plugin for closed-form kinematics of doggo_robot BackLeft</description>
+  </class>
+</library>

@@ -12,65 +12,71 @@ import numpy as np
 
 
 if __name__ == "__main__":
-    moveit_commander.roscpp_initialize(sys.argv)
-    rospy.init_node('move_it_node', anonymous=True)
-    robot = moveit_commander.RobotCommander()
-    scene = moveit_commander.PlanningSceneInterface()
-    group_name = "FrontRight"
-    move_group = moveit_commander.MoveGroupCommander(group_name)
-    planning_frame = move_group.get_planning_frame()
-    print(func for func in dir(move_group))
-    exit()
-    print("============ Planning frame: %s" % planning_frame)
+    try:
+        moveit_commander.roscpp_initialize(sys.argv)
+        rospy.init_node('move_it_node', anonymous=True, disable_signals=True)
+        robot = moveit_commander.RobotCommander()
+        scene = moveit_commander.PlanningSceneInterface()
+        group_name = "FrontRight"
+        FrontRightGroup = moveit_commander.MoveGroupCommander("FrontRight")
+        BackLeftGroup = moveit_commander.MoveGroupCommander("BackLeft")
 
-    # We can also print the name of the end-effector link for this group:
-    eef_link = move_group.get_end_effector_link()
-    print("============ End effector link: %s" % eef_link)
+        joint_goal = FrontRightGroup.get_current_joint_values()
+        joint_goal[0] = 0
+        joint_goal[1] = 0
+        joint_goal[2] = 0
+        FrontRightGroup.go(joint_goal, wait=True)
+        FrontRightGroup.stop()
+        FrontRightGroup.clear_pose_targets()
 
-    # We can get a list of all the groups in the robot:
-    group_names = robot.get_group_names()
-    print("============ Available Planning Groups:", robot.get_group_names())
+        joint_goal = BackLeftGroup.get_current_joint_values()
+        joint_goal[0] = 0
+        joint_goal[1] = 0
+        joint_goal[2] = 0
+        BackLeftGroup.go(joint_goal, wait=True)
+        BackLeftGroup.stop()
+        BackLeftGroup.clear_pose_targets()
+        # exit()
+        FrontRightGroup.set_goal_orientation_tolerance(100)
+        coords = np.linspace(0, 2*3.14, 20)
+        init_pose = FrontRightGroup.get_current_pose().pose
+        x = init_pose.position.x
+        y = init_pose.position.y
+        z = init_pose.position.z
+        points_front_right = [[x, y + 0.05, z + 0.15],
+                  [x, y - 0.05, z + 0.15],
+                  [x, y - 0.05, z + 0.05],
+                  [x, y + 0.05, z + 0.05]]
 
-    # Sometimes for debugging it is useful to print the entire state of the
-    # robot:
-    print("============ Printing robot state", robot.get_current_state())
+        BackLeftGroup.set_goal_orientation_tolerance(100)
+        coords = np.linspace(0, 2*3.14, 20)
+        init_pose = BackLeftGroup.get_current_pose().pose
+        x = init_pose.position.x
+        y = init_pose.position.y
+        z = init_pose.position.z
+        points_back_left = [[x, y + 0.05, z + 0.15],
+                  [x, y - 0.05, z + 0.15],
+                  [x, y - 0.05, z + 0.05],
+                  [x, y + 0.05, z + 0.05]]
+        while not rospy.is_shutdown():
+            for xyz_fr, xyz_bl in zip(points_front_right, points_back_left):
+                pose_goal = geometry_msgs.msg.Pose()
+                pose_goal.position.x = xyz_fr[0]
+                pose_goal.position.y = xyz_fr[1]
+                pose_goal.position.z = xyz_fr[2]
+                FrontRightGroup.set_joint_value_target(pose_goal, 'FrontRightLink4', True)
+                FrontRightGroup.go(wait=True)
+                # FrontRightGroup.clear_pose_targets()
 
-    joint_goal = move_group.get_current_joint_values()
-    joint_goal[0] = 0
-    joint_goal[1] = 0
-    joint_goal[2] = 0
-    move_group.go(joint_goal, wait=True)
-    move_group.stop()
-
-    # pose_goal = geometry_msgs.msg.Pose()
-    # curr_pose = move_group.get_current_pose().pose
-    # pose_goal.position.x = curr_pose.position.x + 0.02
-    # pose_goal.position.y = curr_pose.position.y
-    # pose_goal.position.z = curr_pose.position.z + 0.2
-    # move_group.set_pose_target(pose_goal, True)
-    # move_group.go(wait=True)
-    # move_group.stop()
-    # print(move_group.get_current_pose().pose)
-    # waypoints = []
-    # wpose = move_group.get_current_pose().pose
-    # wpose.position.x += 0.01
-    # wpose.position.y += 0.01
-    # waypoints.append(copy.deepcopy(wpose))
-    # wpose.position.x += 0.01
-    # wpose.position.y += 0.01
-    # waypoints.append(copy.deepcopy(wpose))
-    # wpose.position.x += 0.01
-    # wpose.position.y += 0.01
-    # waypoints.append(copy.deepcopy(wpose))
-    # move_group.set_pose_target(pose_goal)
-
-    # (plan, fraction) = move_group.compute_cartesian_path(waypoints, 0.1, 0.0)
-    # move_group.execute(plan, wait=True)
-
-    # move_group.stop()
-    # move_group.clear_pose_targets()
-    # try:
+                pose_goal = geometry_msgs.msg.Pose()
+                pose_goal.position.x = xyz_bl[0]
+                pose_goal.position.y = xyz_bl[1]
+                pose_goal.position.z = xyz_bl[2]
+                BackLeftGroup.set_joint_value_target(pose_goal, 'BackLeftLink4', True)
+                BackLeftGroup.go(wait=True)
+                BackLeftGroup.clear_pose_targets()
+                # exit()
     #     print("out")
-    # except rospy.ROSInterruptException:
-    #     print("Exception occurred")
-    #     pass
+    except rospy.ROSInterruptException:
+        print("Exception occurred")
+        pass
