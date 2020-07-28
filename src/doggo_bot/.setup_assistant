@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: doggo_robot
+    relative_path: urdf/doggo_robot.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/doggo_robot.srdf
+  CONFIG:
+    author_name: jim
+    author_email: jimzh@hotmail.com
+    generated_timestamp: 1593933200
