@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find doggo_robot)/config/ros_controllers.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" args="joint_state_controller
+                        FrontRightJoint1_position_controller
+                        FrontRightJoint2_position_controller
+                        FrontRightJoint3_position_controller
+                        FrontLeftJoint1_position_controller
+                        FrontLeftJoint2_position_controller
+                        FrontLeftJoint3_position_controller
+                        BackRightJoint1_position_controller
+                        BackRightJoint2_position_controller
+                        BackRightJoint3_position_controller
+                        BackLeftJoint1_position_controller
+                        BackLeftJoint2_position_controller
+                        BackLeftJoint3_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/joint_states" />
+  </node>
+
+</launch>

@@ -1,0 +1,78 @@
+# Settings for ros_control_boilerplate control loop
+# generic_hw_control_loop:
+#   loop_hz: 300
+#   cycle_time_error_threshold: 0.01
+# # Settings for ros_control hardware interface
+# hardware_interface:
+#   joints:
+#     - VirtualJoint
+#     - BackLeftJoint1
+#     - BackLeftJoint2
+#     - BackLeftJoint3
+#     - BackRightJoint1
+#     - BackRightJoint2
+#     - BackRightJoint3
+#     - FrontLeftJoint1
+#     - FrontLeftJoint2
+#     - FrontLeftJoint3
+#     - FrontRightJoint1
+#     - FrontRightJoint2
+#     - FrontRightJoint3
+#   sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+FrontRightJoint1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontRightJoint1
+  pid:  {p: 35, i: 1, d: 1}
+FrontRightJoint2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontRightJoint2
+  pid:  {p: 35, i: 1, d: 1}
+FrontRightJoint3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontRightJoint3
+  pid:  {p: 35, i: 1, d: 1}
+
+FrontLeftJoint1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontLeftJoint1
+  pid:  {p: 35, i: 1, d: 1}
+FrontLeftJoint2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontLeftJoint2
+  pid:  {p: 35, i: 1, d: 1}
+FrontLeftJoint3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: FrontLeftJoint3
+  pid:  {p: 35, i: 1, d: 1}
+
+BackRightJoint1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackRightJoint1
+  pid:  {p: 35, i: 1, d: 1}
+BackRightJoint2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackRightJoint2
+  pid:  {p: 35, i: 1, d: 1}
+BackRightJoint3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackRightJoint3
+  pid:  {p: 35, i: 1, d: 1}
+
+BackLeftJoint1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackLeftJoint1
+  pid:  {p: 35, i: 1, d: 1}
+BackLeftJoint2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackLeftJoint2
+  pid:  {p: 35, i: 1, d: 1}
+BackLeftJoint3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: BackLeftJoint3
+  pid:  {p: 35, i: 1, d: 1}
