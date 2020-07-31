@@ -28,51 +28,51 @@ joint_state_controller:
 FrontRightJoint1_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontRightJoint1
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 FrontRightJoint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontRightJoint2
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 FrontRightJoint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontRightJoint3
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 
 FrontLeftJoint1_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontLeftJoint1
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 FrontLeftJoint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontLeftJoint2
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 FrontLeftJoint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: FrontLeftJoint3
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 
 BackRightJoint1_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackRightJoint1
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 BackRightJoint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackRightJoint2
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 BackRightJoint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackRightJoint3
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 
 BackLeftJoint1_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackLeftJoint1
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 BackLeftJoint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackLeftJoint2
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
 BackLeftJoint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: BackLeftJoint3
-  pid:  {p: 35, i: 1, d: 1}
+  pid:  {p: 200, i: 1, d: 2}
