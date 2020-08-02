@@ -85,8 +85,7 @@ class JointController:
             self.BackLeftJoint3_pub.publish(data=joint3)
 
     def __call__(self, joints):
-        joints[1, :] -= np.pi/3
-        self.control_front_right_joint(-joints[0, 0], -joints[1, 0], -joints[2, 0])
+        self.control_front_right_joint(joints[0, 0], joints[1, 0], joints[2, 0])
         self.control_front_left_joint(joints[0, 1], joints[1, 1], joints[2, 1])
-        self.control_back_right_joint(-joints[0, 2], -joints[1, 2], -joints[2, 2])
+        self.control_back_right_joint(joints[0, 2], joints[1, 2], joints[2, 2])
         self.control_back_left_joint(joints[0, 3], joints[1, 3], joints[2, 3])

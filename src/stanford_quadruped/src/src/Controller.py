@@ -79,7 +79,8 @@ class Controller:
             state.behavior_state = self.trot_transition_mapping[state.behavior_state]
         elif command.hop_event:
             state.behavior_state = self.hop_transition_mapping[state.behavior_state]
-
+        state.behavior_state = BehaviorState.TROT
+        print(state.behavior_state)
         if state.behavior_state == BehaviorState.TROT:
             state.foot_locations, contact_modes = self.step_gait(
                 state,

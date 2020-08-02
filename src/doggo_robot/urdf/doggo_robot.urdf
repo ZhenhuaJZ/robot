@@ -1,544 +1,1000 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="doggo_robot">
-    <link name="world" />
+<robot
+  name="doggo_robot">
 
+  <!-- <link name="world" />
   <joint name="world_link_to_base_link" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
+  </joint> -->
 
-  </joint>
-    <link name="base_link">
-
-<inertial>
-            <origin xyz="7.6534E-18 1.2363E-17 0.050007" rpy="0 0 0" />
-            <mass value="8.7429" />
-            <inertia ixx="0.098828" ixy="4.1822E-18" ixz="-6.831E-19" iyy="0.051833" iyz="5.5264E-18" izz="0.13653" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/base_link.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/base_link.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <link name="FrontRightLink1">
-
-<inertial>
-            <origin xyz="0.005471 4.5133E-10 2.0362E-12" rpy="0 0 0" />
-            <mass value="0.23902" />
-            <inertia ixx="0.000146" ixy="-2.7745E-12" ixz="1.3999E-15" iyy="0.0001694" iyz="1.3079E-11" izz="0.00013744" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink1.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink1.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontRightJoint1" type="revolute">
-        <origin xyz="-0.0899999999999993 -0.22 0.0505413918665352" rpy="-1.5707963267949 0.00403021498393773 -3.14159265358979" />
-        <parent link="base_link" />
-        <child link="FrontRightLink1" />
-        <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontRightLink2">
-
-<inertial>
-            <origin xyz="0.075 5.2834E-08 1.2586E-08" rpy="0 0 0" />
-            <mass value="0.45685" />
-            <inertia ixx="0.00020195" ixy="3.4474E-20" ixz="-4.3516E-20" iyy="0.0021844" iyz="-1.1083E-10" izz="0.0021596" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink2.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink2.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontRightJoint2" type="revolute">
-        <origin xyz="0.0700000000000005 0 0" rpy="1.5707963267949 0 1.5707963267949" />
-        <parent link="FrontRightLink1" />
-        <child link="FrontRightLink2" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontRightLink3">
-
-<inertial>
-            <origin xyz="0.03885 -5.0149E-08 -1.9766E-08" rpy="0 0 0" />
-            <mass value="0.35095" />
-            <inertia ixx="0.00015611" ixy="4.4601E-10" ixz="3.5041E-10" iyy="0.001015" iyz="-1.4127E-10" izz="0.00097907" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink3.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink3.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontRightJoint3" type="revolute">
-        <origin xyz="0.15 0 0.065" rpy="0 0 0" />
-        <parent link="FrontRightLink2" />
-        <child link="FrontRightLink3" />
-        <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontRightLink4">
-
-<inertial>
-            <origin xyz="-0.0125 2.7756E-17 2.7756E-17" rpy="0 0 0" />
-            <mass value="0.016755" />
-            <inertia ixx="2.6808E-06" ixy="3.3305E-39" ixz="1.613E-22" iyy="1.7383E-06" iyz="4.8904E-39" izz="1.7383E-06" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink4.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontRightLink4.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontRightJoint4" type="fixed">
-        <origin xyz="0.17 0 0" rpy="0 0 0" />
-        <parent link="FrontRightLink3" />
-        <child link="FrontRightLink4" />
-        <axis xyz="0 0 0" />
-    </joint>
-    <link name="FrontLeftLink1">
-
-<inertial>
-            <origin xyz="0.005471 -6.3377E-10 -1.1461E-12" rpy="0 0 0" />
-            <mass value="0.23902" />
-            <inertia ixx="0.000146" ixy="3.2001E-12" ixz="-7.894E-16" iyy="0.0001694" iyz="1.3041E-11" izz="0.00013744" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink1.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink1.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontLeftJoint1" type="revolute">
-        <origin xyz="0.09 -0.22 0.0505413918665349" rpy="1.5707963267949 0.00226227152123116 0" />
-        <parent link="base_link" />
-        <child link="FrontLeftLink1" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontLeftLink2">
-
-<inertial>
-            <origin xyz="0.075 5.2834E-08 1.2586E-08" rpy="0 0 0" />
-            <mass value="0.45685" />
-            <inertia ixx="0.00020195" ixy="-1.5977E-20" ixz="-2.836E-19" iyy="0.0021844" iyz="-1.1083E-10" izz="0.0021596" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink2.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink2.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontLeftJoint2" type="revolute">
-        <origin xyz="0.0699999999999998 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
-        <parent link="FrontLeftLink1" />
-        <child link="FrontLeftLink2" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontLeftLink3">
-
-<inertial>
-            <origin xyz="0.03885 -5.0012E-08 -2.0646E-08" rpy="0 0 0" />
-            <mass value="0.35095" />
-            <inertia ixx="0.00015611" ixy="4.4229E-10" ixz="3.6261E-10" iyy="0.001015" iyz="-1.4537E-10" izz="0.00097907" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink3.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink3.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontLeftJoint3" type="revolute">
-        <origin xyz="0.15 0 0.0650000000000001" rpy="0 0 0" />
-        <parent link="FrontLeftLink2" />
-        <child link="FrontLeftLink3" />
-        <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="FrontLeftLink4">
-
-<inertial>
-            <origin xyz="-0.0125 0 0" rpy="0 0 0" />
-            <mass value="0.016755" />
-            <inertia ixx="2.6808E-06" ixy="3.3342E-39" ixz="2.4815E-23" iyy="1.7383E-06" iyz="4.9012E-39" izz="1.7383E-06" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink4.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/FrontLeftLink4.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="FrontLeftJoint4" type="fixed">
-        <origin xyz="0.17 0 0" rpy="0 0 0" />
-        <parent link="FrontLeftLink3" />
-        <child link="FrontLeftLink4" />
-        <axis xyz="0 0 0" />
-    </joint>
-    <link name="BackRightLink1">
-
-<inertial>
-            <origin xyz="0.005471 -8.6868E-10 0" rpy="0 0 0" />
-            <mass value="0.23902" />
-            <inertia ixx="0.000146" ixy="3.7479E-12" ixz="1.2123E-20" iyy="0.0001694" iyz="1.2992E-11" izz="0.00013744" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink1.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink1.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackRightJoint1" type="revolute">
-        <origin xyz="-0.09 0.22 0.0505413918665349" rpy="1.5707963267949 0 3.14159265358979" />
-        <parent link="base_link" />
-        <child link="BackRightLink1" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackRightLink2">
-
-<inertial>
-            <origin xyz="0.075 5.2834E-08 1.2586E-08" rpy="0 0 0" />
-            <mass value="0.45685" />
-            <inertia ixx="0.00020195" ixy="-9.3054E-21" ixz="-3.2989E-20" iyy="0.0021844" iyz="-1.1083E-10" izz="0.0021596" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink2.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink2.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackRightJoint2" type="revolute">
-        <origin xyz="0.07 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
-        <parent link="BackRightLink1" />
-        <child link="BackRightLink2" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackRightLink3">
-
-<inertial>
-            <origin xyz="0.03885 4.9837E-08 2.1772E-08" rpy="0 0 0" />
-            <mass value="0.35095" />
-            <inertia ixx="0.00015611" ixy="-4.3753E-10" ixz="-3.7822E-10" iyy="0.001015" iyz="-1.5061E-10" izz="0.00097907" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink3.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink3.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackRightJoint3" type="revolute">
-        <origin xyz="0.15 0 0.065" rpy="3.14159265358979 0 0" />
-        <parent link="BackRightLink2" />
-        <child link="BackRightLink3" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackRightLink4">
-
-<inertial>
-            <origin xyz="-0.0125 2.7756E-17 -2.7756E-17" rpy="0 0 0" />
-            <mass value="0.016755" />
-            <inertia ixx="2.6808E-06" ixy="-3.3391E-39" ixz="4.5888E-23" iyy="1.7383E-06" iyz="4.9151E-39" izz="1.7383E-06" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink4.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackRightLink4.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackRightJoint4" type="fixed">
-        <origin xyz="0.17 0 0" rpy="0 0 0" />
-        <parent link="BackRightLink3" />
-        <child link="BackRightLink4" />
-        <axis xyz="0 0 0" />
-    </joint>
-    <link name="BackLeftLink1">
-
-<inertial>
-            <origin xyz="0.005471 8.6868E-10 2.7756E-17" rpy="0 0 0" />
-            <mass value="0.23902" />
-            <inertia ixx="0.000146" ixy="-3.7479E-12" ixz="2.3692E-21" iyy="0.0001694" iyz="1.2992E-11" izz="0.00013744" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink1.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink1.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackLeftJoint1" type="revolute">
-        <origin xyz="0.09 0.22 0.0505413918665349" rpy="-1.5707963267949 0 0" />
-        <parent link="base_link" />
-        <child link="BackLeftLink1" />
-        <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackLeftLink2">
-
-<inertial>
-            <origin xyz="0.075 5.2834E-08 1.2586E-08" rpy="0 0 0" />
-            <mass value="0.45685" />
-            <inertia ixx="0.00020195" ixy="-2.4996E-18" ixz="7.3068E-19" iyy="0.0021844" iyz="-1.1083E-10" izz="0.0021596" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink2.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink2.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackLeftJoint2" type="revolute">
-        <origin xyz="0.07 0 0" rpy="1.5707963267949 0 1.5707963267949" />
-        <parent link="BackLeftLink1" />
-        <child link="BackLeftLink2" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackLeftLink3">
-
-<inertial>
-            <origin xyz="0.03885 -4.9837E-08 -2.1772E-08" rpy="0 0 0" />
-            <mass value="0.35095" />
-            <inertia ixx="0.00015611" ixy="4.3753E-10" ixz="3.7822E-10" iyy="0.001015" iyz="-1.5061E-10" izz="0.00097907" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink3.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink3.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackLeftJoint3" type="revolute">
-        <origin xyz="0.15 0 0.0649999999999999" rpy="0 0 0" />
-        <parent link="BackLeftLink2" />
-        <child link="BackLeftLink3" />
-        <axis xyz="0 0 1" />
-        <limit lower="-3.14" upper="3.14" effort="15" velocity="5" />
-        <dynamics damping="0.5" friction="0.5" />
-    </joint>
-    <link name="BackLeftLink4">
-
-<inertial>
-            <origin xyz="-0.0125 2.7756E-17 2.7756E-17" rpy="0 0 0" />
-            <mass value="0.016755" />
-            <inertia ixx="2.6808E-06" ixy="3.3391E-39" ixz="8.1167E-23" iyy="1.7383E-06" iyz="4.9151E-39" izz="1.7383E-06" />
-        </inertial>
-
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink4.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.79216 0.81961 0.93333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://doggo_robot/meshes/BackLeftLink4.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <joint name="BackLeftJoint4" type="fixed">
-        <origin xyz="0.17 0 0" rpy="0 0 0" />
-        <parent link="BackLeftLink3" />
-        <child link="BackLeftLink4" />
-        <axis xyz="0 0 0" />
-    </joint>
-
+<link
+  name="base_link">
+  <inertial>
+    <origin
+      xyz="-6.3942E-18 9.0219E-18 7.0034E-06"
+      rpy="0 0 0" />
+    <mass
+      value="1" />
+    <inertia
+      ixx="0.051833"
+      ixy="-4.1505E-18"
+      ixz="-3.4035E-19"
+      iyy="0.098828"
+      iyz="-4.2342E-19"
+      izz="0.13653" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/base_link.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/base_link.STL" />
+    </geometry>
+  </collision>
+</link>
+<link
+  name="FrontRightLink1">
+  <inertial>
+    <origin
+      xyz="0.005471 4.5133E-10 2.0363E-12"
+      rpy="0 0 0" />
+    <mass
+      value="0.23902" />
+    <inertia
+      ixx="0.000146"
+      ixy="-2.7745E-12"
+      ixz="1.3999E-15"
+      iyy="0.0001694"
+      iyz="1.3079E-11"
+      izz="0.00013744" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink1.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink1.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontRightJoint1"
+  type="revolute">
+  <origin
+    xyz="0.22 -0.09 0.00054139"
+    rpy="-1.5708 0.0040302 -1.5708" />
+  <parent
+    link="base_link" />
+  <child
+    link="FrontRightLink1" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontRightLink2">
+  <inertial>
+    <origin
+      xyz="0.064405 1.0155E-08 4.2216E-09"
+      rpy="0 0 0" />
+    <mass
+      value="0.4003" />
+    <inertia
+      ixx="0.00018734"
+      ixy="6.3399E-11"
+      ixz="-2.1052E-10"
+      iyy="0.0018068"
+      iyz="-1.3396E-10"
+      izz="0.0017711" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink2.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink2.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontRightJoint2"
+  type="revolute">
+  <origin
+    xyz="0.07 0 0"
+    rpy="-1.5708 0 1.5708" />
+  <parent
+    link="FrontRightLink1" />
+  <child
+    link="FrontRightLink2" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontRightLink3">
+  <inertial>
+    <origin
+      xyz="0.065057 -2.1766E-08 -2.0397E-08"
+      rpy="0 0 0" />
+    <mass
+      value="0.20957" />
+    <inertia
+      ixx="4.5367E-05"
+      ixy="-9.3969E-11"
+      ixz="-1.1509E-10"
+      iyy="0.00054698"
+      iyz="5.4535E-10"
+      izz="0.00055813" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink3.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink3.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontRightJoint3"
+  type="revolute">
+  <origin
+    xyz="0.15 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="FrontRightLink2" />
+  <child
+    link="FrontRightLink3" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontRightLink4">
+  <inertial>
+    <origin
+      xyz="-0.0125 -2.7756E-17 -3.6082E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.016755" />
+    <inertia
+      ixx="2.6808E-06"
+      ixy="-3.3305E-39"
+      ixz="-1.6382E-21"
+      iyy="1.7383E-06"
+      iyz="4.8904E-39"
+      izz="1.7383E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink4.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontRightLink4.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontRightJoint4"
+  type="fixed">
+  <origin
+    xyz="0.17 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="FrontRightLink3" />
+  <child
+    link="FrontRightLink4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="FrontLeftLink1">
+  <inertial>
+    <origin
+      xyz="0.00547103132444228 -6.33769883795487E-10 -1.14605547274493E-12"
+      rpy="0 0 0" />
+    <mass
+      value="0.239017817769067" />
+    <inertia
+      ixx="0.000146003872232467"
+      ixy="3.20006806665542E-12"
+      ixz="-7.89369686162748E-16"
+      iyy="0.000169399167271976"
+      iyz="1.30409048722435E-11"
+      izz="0.000137435482893515" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink1.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink1.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontLeftJoint1"
+  type="revolute">
+  <origin
+    xyz="0.22 0.09 0.00054139"
+    rpy="1.5708 0.0022623 1.5708" />
+  <parent
+    link="base_link" />
+  <child
+    link="FrontLeftLink1" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontLeftLink2">
+  <inertial>
+    <origin
+      xyz="0.064405 -1.0155E-08 -4.2216E-09"
+      rpy="0 0 0" />
+    <mass
+      value="0.4003" />
+    <inertia
+      ixx="0.00018734"
+      ixy="-6.3399E-11"
+      ixz="2.1052E-10"
+      iyy="0.0018068"
+      iyz="-1.3396E-10"
+      izz="0.0017711" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink2.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink2.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontLeftJoint2"
+  type="revolute">
+  <origin
+    xyz="0.07 0 0"
+    rpy="-1.5708 0 -1.5708" />
+  <parent
+    link="FrontLeftLink1" />
+  <child
+    link="FrontLeftLink2" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontLeftLink3">
+  <inertial>
+    <origin
+      xyz="0.065057 2.1396E-08 1.9743E-08"
+      rpy="0 0 0" />
+    <mass
+      value="0.20957" />
+    <inertia
+      ixx="4.5367E-05"
+      ixy="9.5949E-11"
+      ixz="1.192E-10"
+      iyy="0.00054698"
+      iyz="5.4538E-10"
+      izz="0.00055813" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink3.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink3.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontLeftJoint3"
+  type="revolute">
+  <origin
+    xyz="0.15 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="FrontLeftLink2" />
+  <child
+    link="FrontLeftLink3" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="FrontLeftLink4">
+  <inertial>
+    <origin
+      xyz="-0.0125 -2.7756E-17 3.8858E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.016755" />
+    <inertia
+      ixx="2.6808E-06"
+      ixy="3.3342E-39"
+      ixz="1.4654E-21"
+      iyy="1.7383E-06"
+      iyz="4.9012E-39"
+      izz="1.7383E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink4.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/FrontLeftLink4.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="FrontLeftJoint4"
+  type="fixed">
+  <origin
+    xyz="0.17 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="FrontLeftLink3" />
+  <child
+    link="FrontLeftLink4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="BackRightLink1">
+  <inertial>
+    <origin
+      xyz="0.005471 8.6868E-10 -2.7756E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.23902" />
+    <inertia
+      ixx="0.000146"
+      ixy="-3.7479E-12"
+      ixz="5.8814E-22"
+      iyy="0.0001694"
+      iyz="1.2992E-11"
+      izz="0.00013744" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink1.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink1.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackRightJoint1"
+  type="revolute">
+  <origin
+    xyz="-0.22 -0.09 0.00054139"
+    rpy="-1.5708 0 -1.5708" />
+  <parent
+    link="base_link" />
+  <child
+    link="BackRightLink1" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackRightLink2">
+  <inertial>
+    <origin
+      xyz="0.064405 1.0155E-08 4.2216E-09"
+      rpy="0 0 0" />
+    <mass
+      value="0.4003" />
+    <inertia
+      ixx="0.00018734"
+      ixy="6.3399E-11"
+      ixz="-2.1052E-10"
+      iyy="0.0018068"
+      iyz="-1.3396E-10"
+      izz="0.0017711" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink2.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink2.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackRightJoint2"
+  type="revolute">
+  <origin
+    xyz="0.07 0 0"
+    rpy="-1.5708 0 1.5708" />
+  <parent
+    link="BackRightLink1" />
+  <child
+    link="BackRightLink2" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackRightLink3">
+  <inertial>
+    <origin
+      xyz="0.065057 -2.0922E-08 -1.8907E-08"
+      rpy="0 0 0" />
+    <mass
+      value="0.20957" />
+    <inertia
+      ixx="4.5367E-05"
+      ixy="-9.848E-11"
+      ixz="-1.2444E-10"
+      iyy="0.00054698"
+      iyz="5.4542E-10"
+      izz="0.00055813" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink3.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink3.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackRightJoint3"
+  type="revolute">
+  <origin
+    xyz="0.15 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="BackRightLink2" />
+  <child
+    link="BackRightLink3" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackRightLink4">
+  <inertial>
+    <origin
+      xyz="-0.0125 2.7756E-17 -3.6082E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.016755" />
+    <inertia
+      ixx="2.6808E-06"
+      ixy="-3.3391E-39"
+      ixz="-1.4469E-21"
+      iyy="1.7383E-06"
+      iyz="4.9151E-39"
+      izz="1.7383E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink4.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackRightLink4.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackRightJoint4"
+  type="fixed">
+  <origin
+    xyz="0.17 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="BackRightLink3" />
+  <child
+    link="BackRightLink4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="BackLeftLink1">
+  <inertial>
+    <origin
+      xyz="0.005471 -8.6868E-10 -2.7756E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.23902" />
+    <inertia
+      ixx="0.000146"
+      ixy="3.7479E-12"
+      ixz="1.3499E-20"
+      iyy="0.0001694"
+      iyz="1.2992E-11"
+      izz="0.00013744" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink1.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink1.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackLeftJoint1"
+  type="revolute">
+  <origin
+    xyz="-0.22 0.09 0.00054139"
+    rpy="1.5708 0 1.5708" />
+  <parent
+    link="base_link" />
+  <child
+    link="BackLeftLink1" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackLeftLink2">
+  <inertial>
+    <origin
+      xyz="0.064405 -1.0155E-08 -4.2216E-09"
+      rpy="0 0 0" />
+    <mass
+      value="0.4003" />
+    <inertia
+      ixx="0.00018734"
+      ixy="-6.3399E-11"
+      ixz="2.1052E-10"
+      iyy="0.0018068"
+      iyz="-1.3396E-10"
+      izz="0.0017711" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink2.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink2.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackLeftJoint2"
+  type="revolute">
+  <origin
+    xyz="0.07 0 0"
+    rpy="-1.5708 0 -1.5708" />
+  <parent
+    link="BackLeftLink1" />
+  <child
+    link="BackLeftLink2" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackLeftLink3">
+  <inertial>
+    <origin
+      xyz="0.065057 2.0922E-08 1.8907E-08"
+      rpy="0 0 0" />
+    <mass
+      value="0.20957" />
+    <inertia
+      ixx="4.5367E-05"
+      ixy="9.848E-11"
+      ixz="1.2444E-10"
+      iyy="0.00054698"
+      iyz="5.4542E-10"
+      izz="0.00055813" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink3.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink3.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackLeftJoint3"
+  type="revolute">
+  <origin
+    xyz="0.15 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="BackLeftLink2" />
+  <child
+    link="BackLeftLink3" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="0.8" />
+  <dynamics
+    damping="0.5"
+    friction="1" />
+</joint>
+<link
+  name="BackLeftLink4">
+  <inertial>
+    <origin
+      xyz="-0.0125 2.7756E-17 3.6082E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.016755" />
+    <inertia
+      ixx="2.6808E-06"
+      ixy="3.3391E-39"
+      ixz="1.6657E-21"
+      iyy="1.7383E-06"
+      iyz="4.9151E-39"
+      izz="1.7383E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink4.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.79216 0.81961 0.93333 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://doggo_robot/meshes/BackLeftLink4.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BackLeftJoint4"
+  type="fixed">
+  <origin
+    xyz="0.17 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="BackLeftLink3" />
+  <child
+    link="BackLeftLink4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
 <transmission name="trans_FrontRightJoint1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="FrontRightJoint1">

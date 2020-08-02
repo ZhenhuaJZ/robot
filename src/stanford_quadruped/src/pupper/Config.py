@@ -30,15 +30,15 @@ class ServoParams:
 class Configuration:
     def __init__(self):
         ################# CONTROLLER BASE COLOR ##############
-        self.ps4_color = PS4_COLOR    
-        self.ps4_deactivated_color = PS4_DEACTIVATED_COLOR    
+        self.ps4_color = PS4_COLOR
+        self.ps4_deactivated_color = PS4_DEACTIVATED_COLOR
 
         #################### COMMANDS ####################
         self.max_x_velocity = 0.4
         self.max_y_velocity = 0.3
         self.max_yaw_rate = 2.0
         self.max_pitch = 30.0 * np.pi / 180.0
-        
+
         #################### MOVEMENT PARAMS ####################
         self.z_time_constant = 0.02
         self.z_speed = 0.03  # maximum speed [m/s]
@@ -51,14 +51,14 @@ class Configuration:
         self.max_stance_yaw_rate = 2.0
 
         #################### STANCE ####################
-        self.delta_x = 0.1
-        self.delta_y = 0.09
-        self.x_shift = 0.0
+        self.delta_x = 0.18
+        self.delta_y = 0.17
+        self.x_shift = 0.05
         self.default_z_ref = -0.16
 
         #################### SWING ######################
         self.z_coeffs = None
-        self.z_clearance = 0.07
+        self.z_clearance = 0.1
         self.alpha = (
             0.5  # Ratio between touchdown distance and total horizontal stance movement
         )
@@ -80,12 +80,12 @@ class Configuration:
         )
 
         ######################## GEOMETRY ######################
-        self.LEG_FB = 0.10  # front-back distance from center line to leg axis
-        self.LEG_LR = 0.04  # left-right distance from center line to leg plane
-        self.LEG_L2 = 0.115
-        self.LEG_L1 = 0.1235
-        self.ABDUCTION_OFFSET = 0.03  # distance from abduction axis to leg
-        self.FOOT_RADIUS = 0.01
+        self.LEG_FB = 0.175  # front-back distance from center line to leg axis
+        self.LEG_LR = 0.09  # left-right distance from center line to leg plane
+        self.LEG_L2 = 0.15
+        self.LEG_L1 = 0.15
+        self.ABDUCTION_OFFSET = 0.07  # distance from abduction axis to leg
+        self.FOOT_RADIUS = 0.02
 
         self.HIP_L = 0.0394
         self.HIP_W = 0.0744
@@ -191,7 +191,7 @@ class Configuration:
     def phase_length(self):
         return 2 * self.overlap_ticks + 2 * self.swing_ticks
 
-        
+
 class SimulationConfig:
     def __init__(self):
         self.XML_IN = "pupper.xml"
@@ -204,7 +204,7 @@ class SimulationConfig:
         self.JOINT_SOLIMP = "0.9 0.95 0.001"  # joint constraint parameters
         self.GEOM_SOLREF = "0.01 1"  # time constant and damping ratio for geom contacts
         self.GEOM_SOLIMP = "0.9 0.95 0.001"  # geometry contact parameters
-        
+
         # Joint params
         G = 220  # Servo gear ratio
         m_rotor = 0.016  # Servo rotor mass
