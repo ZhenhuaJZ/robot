@@ -8,7 +8,7 @@ class StanceController:
 
     def position_delta(self, leg_index, state, command):
         """Calculate the difference between the next desired body location and the current body location
-        
+
         Parameters
         ----------
         z_measured : float
@@ -44,5 +44,7 @@ class StanceController:
         foot_location = state.foot_locations[:, leg_index]
         (delta_p, delta_R) = self.position_delta(leg_index, state, command)
         incremented_location = delta_R @ foot_location + delta_p
-
+        print("foot_location", foot_location)
+        print("delta_R @ foot_location: ", delta_R @ foot_location)
+        print("incremented_location", incremented_location)
         return incremented_location

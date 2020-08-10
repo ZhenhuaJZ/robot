@@ -5,23 +5,32 @@ class GaitController:
 
     def phase_index(self, ticks):
         """Calculates which part of the gait cycle the robot should be in given the time in ticks.
-        
+
         Parameters
         ----------
         ticks : int
             Number of timesteps since the program started
         gaitparams : GaitParams
             GaitParams object
-        
+
         Returns
         -------
         Int
             The index of the gait phase that the robot should be in.
+
+        The phase index calculates which phase the current robot should be in
+            base on the current tick,
+        T
         """
+        print("phase_length: ", self.config.phase_length)
+        print("num_phases: ", self.config.num_phases)
         phase_time = ticks % self.config.phase_length
+        print("Phase_time: ", phase_time)
         phase_sum = 0
         for i in range(self.config.num_phases):
             phase_sum += self.config.phase_ticks[i]
+            # If the current tick is within the sum of phase ticks, then its in current phase
+            # ie. phase_time 0-10 is first phase, 10-25 is second phase and so on.
             if phase_time < phase_sum:
                 return i
         assert False
@@ -36,7 +45,7 @@ class GaitController:
             Number of timesteps since the program started
         gaitparams : GaitParams
             GaitParams object
-        
+
         Returns
         -------
         Int
@@ -55,14 +64,14 @@ class GaitController:
 
     def contacts(self, ticks):
         """Calculates which feet should be in contact at the given number of ticks
-        
+
         Parameters
         ----------
         ticks : Int
             Number of timesteps since the program started.
         gaitparams : GaitParams
             GaitParams object
-        
+
         Returns
         -------
         numpy array (4,)

@@ -33,7 +33,6 @@ class Controller:
         self.trot_transition_mapping = {BehaviorState.REST: BehaviorState.TROT, BehaviorState.TROT: BehaviorState.REST, BehaviorState.HOP: BehaviorState.TROT, BehaviorState.FINISHHOP: BehaviorState.TROT}
         self.activate_transition_mapping = {BehaviorState.DEACTIVATED: BehaviorState.REST, BehaviorState.REST: BehaviorState.DEACTIVATED}
 
-
     def step_gait(self, state, command):
         """Calculate the desired foot locations for the next timestep
 
@@ -42,7 +41,9 @@ class Controller:
         Numpy array (3, 4)
             Matrix of new foot locations.
         """
+        print("Curr ticks: ", state.ticks)
         contact_modes = self.gait_controller.contacts(state.ticks)
+        print(contact_modes)
         new_foot_locations = np.zeros((3, 4))
         for leg_index in range(4):
             contact_mode = contact_modes[leg_index]
@@ -62,7 +63,6 @@ class Controller:
             new_foot_locations[:, leg_index] = new_location
         return new_foot_locations, contact_modes
 
-
     def run(self, state, command):
         """Steps the controller forward one timestep
 
@@ -80,7 +80,7 @@ class Controller:
         elif command.hop_event:
             state.behavior_state = self.hop_transition_mapping[state.behavior_state]
         state.behavior_state = BehaviorState.TROT
-        print(state.behavior_state)
+        # print(state.behavior_state)
         if state.behavior_state == BehaviorState.TROT:
             state.foot_locations, contact_modes = self.step_gait(
                 state,
